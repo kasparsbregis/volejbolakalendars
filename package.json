@@ -1,7 +1,8 @@
 {
-  "name": "template",
+  "name": "nextjs-template",
   "version": "0.1.0",
   "private": true,
+  "description": "A clean Next.js 15 template for starting new projects",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
