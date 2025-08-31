@@ -2,16 +2,9 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Mail,
-  Phone,
-  MapPin,
-  Heart,
-} from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const ref = useRef(null);
@@ -43,7 +36,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
             {/* Company Info */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -53,7 +46,6 @@ export default function Footer() {
                 delay: 0.2,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              className="lg:col-span-1"
             >
               <div className="flex items-center gap-3 mb-6">
                 <Image
@@ -63,83 +55,13 @@ export default function Footer() {
                   height={40}
                 />
                 <span className="text-xl font-bold text-[#BEF992]">
-                  Volejbola Kalendārs
+                  VOLEJBOLA KALENDĀRS
                 </span>
               </div>
-              <p className="text-gray-300 mb-6 leading-relaxed">
+              <p className="text-gray-300 mb-6 leading-relaxed text-lg">
                 Platforma volejbola cienītājiem - izveido, organizē un piedalies
                 pludmales volejbola turnīros!
               </p>
-              <div className="flex space-x-4">
-                <motion.a
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="#"
-                  className="w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors duration-300"
-                >
-                  <Facebook className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="#"
-                  className="w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors duration-300"
-                >
-                  <Instagram className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="#"
-                  className="w-10 h-10 bg-rose-500 rounded-full flex items-center justify-center hover:bg-rose-600 transition-colors duration-300"
-                >
-                  <Twitter className="w-5 h-5" />
-                </motion.a>
-              </div>
-            </motion.div>
-
-            {/* Services */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-            >
-              <h3 className="text-lg font-semibold text-[#BEF992] mb-6">
-                Pakalpojumi
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Turnīru Organizēšana",
-                  "Reģistrācija",
-                  "Rezultātu Sekošana",
-                  "Vietu Sadalījums",
-                  "Statistika",
-                ].map((item, index) => (
-                  <motion.li
-                    key={item}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={
-                      isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                    }
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.8 + index * 0.1,
-                      ease: "easeOut",
-                    }}
-                  >
-                    <a
-                      href="#"
-                      className="text-gray-300 hover:text-[#BEF992] transition-colors duration-300"
-                    >
-                      {item}
-                    </a>
-                  </motion.li>
-                ))}
-              </ul>
             </motion.div>
 
             {/* Contact Info */}
@@ -148,24 +70,26 @@ export default function Footer() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{
                 duration: 0.8,
-                delay: 0.8,
+                delay: 0.4,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
             >
-              <h3 className="text-lg font-semibold text-[#BEF992] mb-6">
+              <h3 className="text-xl font-semibold text-[#BEF992] mb-8">
                 Kontakti
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-6">
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={
                     isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
                   }
-                  transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
-                  className="flex items-center gap-3"
+                  transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+                  className="flex items-center gap-4"
                 >
-                  <Mail className="w-5 h-5 text-rose-500" />
-                  <span className="text-gray-300">
+                  <div className="w-10 h-10 bg-rose-500/20 rounded-full flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <span className="text-gray-300 text-lg">
                     info@volejbolakalendars.lv
                   </span>
                 </motion.div>
@@ -174,22 +98,26 @@ export default function Footer() {
                   animate={
                     isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
                   }
-                  transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
-                  className="flex items-center gap-3"
+                  transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+                  className="flex items-center gap-4"
                 >
-                  <Phone className="w-5 h-5 text-rose-500" />
-                  <span className="text-gray-300">+371 20000000</span>
+                  <div className="w-10 h-10 bg-rose-500/20 rounded-full flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <span className="text-gray-300 text-lg">+371 20000000</span>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={
                     isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
                   }
-                  transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
-                  className="flex items-center gap-3"
+                  transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+                  className="flex items-center gap-4"
                 >
-                  <MapPin className="w-5 h-5 text-rose-500" />
-                  <span className="text-gray-300">Rīga, Latvija</span>
+                  <div className="w-10 h-10 bg-rose-500/20 rounded-full flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-rose-500" />
+                  </div>
+                  <span className="text-gray-300 text-lg">Rīga, Latvija</span>
                 </motion.div>
               </div>
             </motion.div>
@@ -202,19 +130,23 @@ export default function Footer() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{
             duration: 0.8,
-            delay: 1.2,
+            delay: 1.0,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="py-6 border-t border-gray-800 text-center"
+          className="py-8 border-t border-gray-800 text-center"
         >
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2025 Volejbola Kalendārs. Visas tiesības aizsargātas.
+              © {new Date().getFullYear()} Volejbola Kalendārs. Visas tiesības
+              aizsargātas.
             </p>
             <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>Izveidots ar</span>
-              <Heart className="w-4 h-4 text-rose-500 fill-current" />
-              <span>Latvijā</span>
+              <span>Mājslapas izstrādātājs:</span>
+              <Link href={"/team"}>
+                <span className="text-red-500 hover:text-red-400 transition-colors duration-200">
+                  Kaspars Breģis
+                </span>
+              </Link>
             </div>
           </div>
         </motion.div>

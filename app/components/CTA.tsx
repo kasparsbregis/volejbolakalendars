@@ -7,12 +7,12 @@ import { Calendar, Users, Trophy, Eye } from "lucide-react";
 
 export default function CTA() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-200px" });
 
   return (
     <section
       ref={ref}
-      className="py-24 bg-gradient-to-b from-rose-500/10 via-rose-500/20 to-[#020013] relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-rose-500/10  to-[#020013] relative overflow-hidden"
     >
       {/* Background Elements */}
       <motion.div
@@ -52,7 +52,7 @@ export default function CTA() {
             }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            Esi formā?
+            Esi Formā?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -62,7 +62,7 @@ export default function CTA() {
               delay: 0.4,
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
           >
             Pievienojies tūkstošiem volejbola cienītāju un piedalies aizraujošos
             turnīros!

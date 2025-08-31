@@ -124,7 +124,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
               className="text-xl font-bold text-gray-100 mb-4 tracking-tighter"
             >
-              Viss vienuviet
+              Pārskatāmība
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, x: -20 }}
@@ -132,8 +132,8 @@ export default function About() {
               transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
               className="text-gray-200 tracking-normal"
             >
-              Informācija par turnīriem, reģistrācija, rezultāti, vietu
-              sadalījums - viss vienuviet!
+              Ātri un viegli pārskatiet pieejamo turnīru informāciju, lokāciju,
+              datumu un izspēles sistēmu!
             </motion.p>
           </motion.div>
 
@@ -167,7 +167,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
               className="text-xl font-bold text-gray-100 mb-4 tracking-tighter"
             >
-              Viegli lietojama
+              Ērti lietojama
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, x: -20 }}
@@ -175,7 +175,8 @@ export default function About() {
               transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
               className="text-gray-200 tracking-normal"
             >
-              Turnīra organizēšana nekad nav bijusi tik vienkārša kā tagad!
+              Viegla turnīru pievienošana, izspēles sistēmas izvēle grupā un
+              play-off stadijā!
             </motion.p>
           </motion.div>
 
@@ -209,7 +210,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
               className="text-xl font-bold text-gray-100 mb-4 tracking-tighter"
             >
-              Customer Focused
+              Viss vienuviet
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, x: -20 }}
@@ -217,8 +218,8 @@ export default function About() {
               transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
               className="text-gray-200 tracking-normal"
             >
-              We prioritize customer satisfaction and build long-term
-              relationships based on trust and results.
+              Mēs apvienojam volejbola cienītājus ar turnīra orgranizatoriem
+              vienā vietā, lai paplašinātu volejbola saimi Latvijā!
             </motion.p>
           </motion.div>
         </div>
