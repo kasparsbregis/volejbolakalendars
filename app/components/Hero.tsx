@@ -43,7 +43,7 @@ export default function Hero() {
             delay: 0.3,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="flex flex-col gap-4 items-center"
+          className="flex flex-col gap-4 items-center text-center"
         >
           <motion.div
             initial={{ rotate: -20, scale: 0.8 }}
@@ -70,9 +70,9 @@ export default function Hero() {
               delay: 0.9,
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="text-4xl sm:text-6xl font-extrabold mb-4 md:mb-6 leading-10 sm:leading-16 text-[#BEF992] tracking-tighter"
+            className="text-4xl sm:text-6xl font-extrabold mb-4 md:mb-6 leading-10 sm:leading-16 text-[#BEF992] tracking-tighter text-center"
           >
-            VOLEJBOLA <br></br>KALENDĀRS
+            VOLEJBOLA<br></br>KALENDĀRS
           </motion.h1>
         </motion.div>
 
@@ -84,10 +84,9 @@ export default function Hero() {
             delay: 1.2,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="text-lg sm:text-xl md:text-xl mb-6 md:mb-8 text-gray-50 max-w-3xl mx-auto leading-relaxed px-2"
+          className="text-lg sm:text-xl md:text-xl mb-6 md:mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed tracking-tighter px-2"
         >
-          Platforma volejbola cienītājiem - izveido, organizē un piedalies
-          pludmales volejbola turnīros!
+          Atrodi sev interesējošos turnīrus un piedalies!
         </motion.p>
 
         <motion.div

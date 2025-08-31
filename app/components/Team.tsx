@@ -5,8 +5,7 @@ export default function Team() {
     {
       name: "Sarah Johnson",
       role: "CEO & Founder",
-      image:
-        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "Visionary leader with 15+ years in tech industry",
       social: {
         linkedin: "#",
@@ -17,8 +16,7 @@ export default function Team() {
     {
       name: "Michael Chen",
       role: "CTO",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "Tech expert passionate about innovation and scalability",
       social: {
         linkedin: "#",
@@ -29,8 +27,7 @@ export default function Team() {
     {
       name: "Emily Rodriguez",
       role: "Head of Design",
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "Creative designer focused on user experience",
       social: {
         linkedin: "#",
@@ -41,8 +38,7 @@ export default function Team() {
     {
       name: "David Kim",
       role: "Lead Developer",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "Full-stack developer with expertise in modern technologies",
       social: {
         linkedin: "#",
@@ -53,8 +49,7 @@ export default function Team() {
     {
       name: "Lisa Thompson",
       role: "Marketing Director",
-      image:
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "Strategic marketer driving growth and brand awareness",
       social: {
         linkedin: "#",
@@ -65,8 +60,7 @@ export default function Team() {
     {
       name: "Alex Martinez",
       role: "Product Manager",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      image: "",
       bio: "Product strategist focused on customer needs and market fit",
       social: {
         linkedin: "#",

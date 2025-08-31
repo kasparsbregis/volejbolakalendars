@@ -1,200 +1,226 @@
+"use client";
+
+import { Heart, MonitorDown, SlidersHorizontal } from "lucide-react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
+
 export default function About() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section id="about" className="py-32 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      ref={ref}
+      id="about"
+      className="py-32 bg-gradient-to-b from-[#020013] to-rose-500/10 relative"
+    >
+      {/* Background Elements */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={
+          isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+        }
+        transition={{ duration: 2, delay: 0.5 }}
+        className="absolute top-20 left-20 w-32 h-32 md:w-64 md:h-64 bg-rose-500/5 rounded-full blur-3xl"
+      />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={
+          isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+        }
+        transition={{ duration: 2, delay: 1 }}
+        className="absolute bottom-20 right-20 w-40 h-40 md:w-80 md:h-80 bg-[#BEF992]/5 rounded-full blur-3xl"
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold  mb-6">Par Mums</h2>
-          <p className="text-xl max-w-3xl mx-auto">
-            We are passionate about creating innovative solutions that drive
-            business growth and deliver exceptional user experiences.
-          </p>
-        </div>
-
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-          {/* Left Column - Text */}
-          <div>
-            <h3 className="text-3xl font-bold mb-6">
-              Transforming Ideas Into Digital Reality
-            </h3>
-            <p className="text-lg mb-6">
-              Founded in 2020, we&apos;ve been at the forefront of digital
-              innovation, helping businesses of all sizes navigate the complex
-              digital landscape. Our team of experts combines creativity with
-              technical excellence to deliver solutions that exceed
-              expectations.
-            </p>
-            <p className="text-lg mb-8">
-              We believe in building long-term partnerships with our clients,
-              understanding their unique challenges, and crafting tailored
-              solutions that drive measurable results.
-            </p>
-
-            {/* Key Points */}
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-3">
-                  <svg
-                    className="w-4 h-4 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-700 font-medium">
-                  10+ Years of Experience
-                </span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-3">
-                  <svg
-                    className="w-4 h-4 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-700 font-medium">
-                  500+ Successful Projects
-                </span>
-              </div>
-              <div className="flex items-center">
-                <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center mr-3">
-                  <svg
-                    className="w-4 h-4 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span className="text-gray-700 font-medium">
-                  24/7 Customer Support
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column - Visual */}
-          <div className="relative">
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
-              <div className="text-center">
-                <div className="text-6xl font-bold mb-4">15+</div>
-                <div className="text-xl mb-2">Team Members</div>
-                <div className="text-blue-200">Dedicated professionals</div>
-              </div>
-            </div>
-
-            {/* Floating Elements */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4">
-              <div className="text-2xl font-bold text-blue-600">99%</div>
-              <div className="text-sm text-gray-600">Client Satisfaction</div>
-            </div>
-
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4">
-              <div className="text-2xl font-bold text-purple-600">24/7</div>
-              <div className="text-sm text-gray-600">Support Available</div>
-            </div>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="text-center mb-16"
+        >
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+            }
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
+            Par Mums
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.4,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            className="text-xl max-w-3xl mx-auto tracking-tighter text-gray-200"
+          >
+            Mums arī patīk volejbols{" "}
+            <motion.span
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="inline-block"
+            >
+              ❤️
+            </motion.span>
+            , tāpēc izveidojām šo platformu, lai varētu sakopot turnīrus
+            vienuviet un kvalitatīvi tos organizēt{" "}
+            <motion.span
+              animate={{ rotate: [0, 360] }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="inline-block"
+            >
+              🏐
+            </motion.span>
+          </motion.p>
+        </motion.div>
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-              <svg
-                className="w-6 h-6 text-blue-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Fast & Efficient
-            </h3>
-            <p className="text-gray-600">
-              We deliver projects on time and within budget, ensuring maximum
-              efficiency and value for our clients.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 60, scale: 0.9 }}
+            animate={
+              isInView
+                ? { opacity: 1, y: 0, scale: 1 }
+                : { opacity: 0, y: 60, scale: 0.9 }
+            }
+            transition={{
+              duration: 0.8,
+              delay: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            className="bg-rose-500 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
+              className="w-12 h-12 bg-[#020013] rounded-lg flex items-center justify-center mb-6"
+            >
+              <MonitorDown className="w-6 h-6 text-rose-500" />
+            </motion.div>
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+              className="text-xl font-bold text-gray-100 mb-4 tracking-tighter"
+            >
+              Viss vienuviet
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              className="text-gray-200 tracking-normal"
+            >
+              Informācija par turnīriem, reģistrācija, rezultāti, vietu
+              sadalījums - viss vienuviet!
+            </motion.p>
+          </motion.div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-              <svg
-                className="w-6 h-6 text-purple-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Quality Assured
-            </h3>
-            <p className="text-gray-600">
-              Every project undergoes rigorous testing and quality assurance to
-              ensure the highest standards are met.
-            </p>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 60, scale: 0.9 }}
+            animate={
+              isInView
+                ? { opacity: 1, y: 0, scale: 1 }
+                : { opacity: 0, y: 60, scale: 0.9 }
+            }
+            transition={{
+              duration: 0.8,
+              delay: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            className="bg-rose-500 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+              className="w-12 h-12 bg-[#020013] rounded-lg flex items-center justify-center mb-6"
+            >
+              <SlidersHorizontal className="w-6 h-6 text-rose-500" />
+            </motion.div>
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              className="text-xl font-bold text-gray-100 mb-4 tracking-tighter"
+            >
+              Viegli lietojama
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+              className="text-gray-200 tracking-normal"
+            >
+              Turnīra organizēšana nekad nav bijusi tik vienkārša kā tagad!
+            </motion.p>
+          </motion.div>
 
-          <div className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-6">
-              <svg
-                className="w-6 h-6 text-pink-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                />
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 60, scale: 0.9 }}
+            animate={
+              isInView
+                ? { opacity: 1, y: 0, scale: 1 }
+                : { opacity: 0, y: 60, scale: 0.9 }
+            }
+            transition={{
+              duration: 0.8,
+              delay: 1.0,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            className="bg-rose-500 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+              }
+              transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
+              className="w-12 h-12 bg-[#020013] rounded-lg flex items-center justify-center mb-6"
+            >
+              <Heart className="w-6 h-6 text-rose-500" />
+            </motion.div>
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
+              className="text-xl font-bold text-gray-100 mb-4 tracking-tighter"
+            >
               Customer Focused
-            </h3>
-            <p className="text-gray-600">
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+              transition={{ duration: 0.6, delay: 1.6, ease: "easeOut" }}
+              className="text-gray-200 tracking-normal"
+            >
               We prioritize customer satisfaction and build long-term
               relationships based on trust and results.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </div>
     </section>
