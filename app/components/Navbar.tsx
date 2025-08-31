@@ -1,126 +1,64 @@
 "use client";
 
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="bg-white/90 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#413D65]/20 backdrop-blur-md shadow-sm"
+          : "bg-[#413D65]/0 backdrop-blur-none shadow-none"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              YourBrand
-            </h1>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#team"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Team
-              </a>
-              <a
-                href="#contact"
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                Contact
-              </a>
-            </div>
+            <a href="#home" className="">
+              <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={50}
+                height={50}
+                className="hover:scale-105 transition-all duration-300"
+              />
+            </a>
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-              Get Started
-            </button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+          <motion.div
+            whileHover={{
+              scale: 1.05,
+              y: -2,
+              transition: { duration: 0.2 },
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="block"
+          >
+            <Button
+              variant={"outline"}
+              className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
-            </button>
-          </div>
+              Turnīri
+            </Button>
+          </motion.div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg">
-              <a
-                href="#home"
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-              >
-                Home
-              </a>
-              <a
-                href="#about"
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#team"
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-              >
-                Team
-              </a>
-              <a
-                href="#contact"
-                className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-              >
-                Contact
-              </a>
-              <div className="pt-4">
-                <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300">
-                  Get Started
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );

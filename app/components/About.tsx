@@ -1,16 +1,11 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-32 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Us
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold  mb-6">Par Mums</h2>
+          <p className="text-xl max-w-3xl mx-auto">
             We are passionate about creating innovative solutions that drive
             business growth and deliver exceptional user experiences.
           </p>
@@ -20,17 +15,17 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Left Column - Text */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">
+            <h3 className="text-3xl font-bold mb-6">
               Transforming Ideas Into Digital Reality
             </h3>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Founded in 2020, we've been at the forefront of digital
+            <p className="text-lg mb-6">
+              Founded in 2020, we&apos;ve been at the forefront of digital
               innovation, helping businesses of all sizes navigate the complex
               digital landscape. Our team of experts combines creativity with
               technical excellence to deliver solutions that exceed
               expectations.
             </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg mb-8">
               We believe in building long-term partnerships with our clients,
               understanding their unique challenges, and crafting tailored
               solutions that drive measurable results.
@@ -205,4 +200,3 @@ export default function About() {
     </section>
   );
 }
-
