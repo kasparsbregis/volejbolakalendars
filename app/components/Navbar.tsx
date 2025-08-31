@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -30,7 +31,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#home" className="">
+            <Link href="/">
               <Image
                 src="/images/logo.png"
                 alt="Logo"
@@ -38,7 +39,7 @@ export default function Navbar() {
                 height={50}
                 className="hover:scale-105 transition-all duration-300"
               />
-            </a>
+            </Link>
           </div>
 
           {/* CTA Button */}
@@ -51,9 +52,11 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="block"
           >
-            <Button className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer transition-all duration-200 border-2">
-              Turnīri
-            </Button>
+            <Link href="/turniri">
+              <Button className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer transition-all duration-200 border-2">
+                Turnīri
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -93,19 +93,7 @@ export default function Footer() {
                     info@volejbolakalendars.lv
                   </span>
                 </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={
-                    isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                  }
-                  transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
-                  className="flex items-center gap-4"
-                >
-                  <div className="w-10 h-10 bg-rose-500/20 rounded-full flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-rose-500" />
-                  </div>
-                  <span className="text-gray-300 text-lg">+371 20000000</span>
-                </motion.div>
+
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={

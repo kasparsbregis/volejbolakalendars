@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Eye, Plus } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -107,12 +108,14 @@ export default function Hero() {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button
-              variant={"outline"}
-              className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer w-[250px] hover:shadow-lg"
-            >
-              <Eye /> Aplūkot Turnīrus
-            </Button>
+            <Link href="/turniri">
+              <Button
+                variant={"outline"}
+                className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer w-[250px] hover:shadow-lg"
+              >
+                <Eye /> Aplūkot Turnīrus
+              </Button>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -123,13 +126,15 @@ export default function Hero() {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <Button
-              variant={"default"}
-              className="bg-[#BEF992] text-[#2B1F31] hover:bg-[#a9dd81] hover:cursor-pointer w-[250px] hover:shadow-lg"
-            >
-              <Plus />
-              Izveidot Turnīru
-            </Button>
+            <Link href="/turniri">
+              <Button
+                variant={"default"}
+                className="bg-[#BEF992] text-[#2B1F31] hover:bg-[#a9dd81] hover:cursor-pointer w-[250px] hover:shadow-lg"
+              >
+                <Plus />
+                Izveidot Turnīru
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

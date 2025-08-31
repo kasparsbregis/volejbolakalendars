@@ -4,6 +4,7 @@ import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Eye, ChevronDown } from "lucide-react";
+import Link from "next/link";
 
 export default function CTA() {
   const ref = useRef(null);
@@ -108,12 +109,14 @@ export default function CTA() {
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
           >
-            <Button
-              variant={"outline"}
-              className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer w-[250px] hover:shadow-lg"
-            >
-              <Eye /> Aplūkot Turnīrus
-            </Button>
+            <Link href="/turniri">
+              <Button
+                variant={"outline"}
+                className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] shadow-[#BEF992]/30 shadow-xl/50 hover:text-[#2B1F31] hover:cursor-pointer w-[250px] text-base py-6 px-4"
+              >
+                <Eye /> Aplūkot Turnīrus
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
