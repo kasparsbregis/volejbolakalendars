@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Team() {
   const teamMembers = [
     {
@@ -101,9 +103,11 @@ export default function Team() {
               {/* Profile Image */}
               <div className="relative mb-6">
                 <div className="w-32 h-32 mx-auto rounded-full overflow-hidden ring-4 ring-blue-100">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
+                    width={128}
+                    height={128}
                     className="w-full h-full object-cover"
                   />
                 </div>
