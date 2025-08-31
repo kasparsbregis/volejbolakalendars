@@ -51,10 +51,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
             className="block"
           >
-            <Button
-              variant={"outline"}
-              className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer"
-            >
+            <Button className="border-[#BEF992] bg-transparent text-[#BEF992] hover:bg-[#BEF992] hover:text-[#2B1F31] hover:cursor-pointer transition-all duration-200 border-2">
               Turnīri
             </Button>
           </motion.div>
