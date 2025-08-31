@@ -1,21 +1,29 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { motion } from "motion/react";
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 
 const Newsletter = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-16 bg-[#020013] relative">
+    <section ref={ref} className="py-16 bg-[#020013] relative">
       {/* Background Elements */}
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={
+          isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+        }
         transition={{ duration: 2, delay: 0.3 }}
         className="absolute top-10 left-1/4 w-32 h-32 md:w-64 md:h-64 bg-rose-500/5 rounded-full blur-3xl"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
+        animate={
+          isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
+        }
         transition={{ duration: 2, delay: 0.6 }}
         className="absolute bottom-10 right-1/4 w-40 h-40 md:w-80 md:h-80 bg-[#BEF992]/5 rounded-full blur-3xl"
       />
@@ -24,7 +32,7 @@ const Newsletter = () => {
         {/* Newsletter Signup */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
           transition={{
             duration: 0.8,
             delay: 0.3,
@@ -35,7 +43,9 @@ const Newsletter = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
             <motion.h3
               initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              animate={
+                isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+              }
               transition={{
                 duration: 0.8,
                 delay: 0.5,
@@ -47,7 +57,7 @@ const Newsletter = () => {
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{
                 duration: 0.8,
                 delay: 0.7,
@@ -59,7 +69,7 @@ const Newsletter = () => {
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{
                 duration: 0.8,
                 delay: 0.9,

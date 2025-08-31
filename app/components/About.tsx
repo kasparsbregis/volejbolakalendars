@@ -1,6 +1,6 @@
 "use client";
 
-import { Heart, MonitorDown, SlidersHorizontal } from "lucide-react";
+import { MonitorDown, Search, SlidersHorizontal } from "lucide-react";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
@@ -116,7 +116,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 0.8, ease: "easeOut" }}
               className="w-12 h-12 bg-[#020013] rounded-lg flex items-center justify-center mb-6"
             >
-              <MonitorDown className="w-6 h-6 text-rose-500" />
+              <Search className="w-6 h-6 text-rose-500" />
             </motion.div>
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
@@ -202,7 +202,7 @@ export default function About() {
               transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
               className="w-12 h-12 bg-[#020013] rounded-lg flex items-center justify-center mb-6"
             >
-              <Heart className="w-6 h-6 text-rose-500" />
+              <MonitorDown className="w-6 h-6 text-rose-500" />
             </motion.div>
             <motion.h3
               initial={{ opacity: 0, x: -20 }}

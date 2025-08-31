@@ -3,7 +3,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Users, Trophy, Eye } from "lucide-react";
+import { Eye, ChevronDown } from "lucide-react";
 
 export default function CTA() {
   const ref = useRef(null);
@@ -12,7 +12,7 @@ export default function CTA() {
   return (
     <section
       ref={ref}
-      className="py-24 bg-gradient-to-b from-rose-500/10  to-[#020013] relative overflow-hidden"
+      className="py-24 bg-gradient-to-b from-rose-500/10 to-[#020013] relative overflow-hidden"
     >
       {/* Background Elements */}
       <motion.div
@@ -38,7 +38,7 @@ export default function CTA() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
           <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
@@ -52,7 +52,7 @@ export default function CTA() {
             }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            Esi Formā?
+            💪 Esi Formā?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -69,51 +69,26 @@ export default function CTA() {
           </motion.p>
         </motion.div>
 
-        {/* Stats Row */}
+        {/* Animated Arrow */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{
             duration: 0.8,
             delay: 0.6,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+          className="flex justify-center items-center mb-8"
         >
           <motion.div
-            whileHover={{ scale: 1.05, y: -5 }}
-            transition={{ duration: 0.3 }}
-            className="text-center"
+            animate={{ y: [0, 10, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
           >
-            <div className="w-16 h-16 bg-rose-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Calendar className="w-8 h-8 text-white" />
-            </div>
-            <div className="text-3xl font-bold text-[#BEF992] mb-2">50+</div>
-            <div className="text-gray-300">Aktīvi Turnīri</div>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05, y: -5 }}
-            transition={{ duration: 0.3 }}
-            className="text-center"
-          >
-            <div className="w-16 h-16 bg-rose-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="w-8 h-8 text-white" />
-            </div>
-            <div className="text-3xl font-bold text-[#BEF992] mb-2">1000+</div>
-            <div className="text-gray-300">Dalībnieki</div>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05, y: -5 }}
-            transition={{ duration: 0.3 }}
-            className="text-center"
-          >
-            <div className="w-16 h-16 bg-rose-500 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Trophy className="w-8 h-8 text-white" />
-            </div>
-            <div className="text-3xl font-bold text-[#BEF992] mb-2">25+</div>
-            <div className="text-gray-300">Uzvarētāji</div>
+            <ChevronDown className="w-10 h-10 text-[#BEF992]" />
           </motion.div>
         </motion.div>
 

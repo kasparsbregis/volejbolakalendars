@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer
       ref={ref}
-      className="bg-[#020013] text-white relative overflow-hidden"
+      className="bg-[#020013] text-white relative overflow-hidden border-t border-gray-800"
     >
       {/* Background Elements */}
       <motion.div
@@ -143,7 +143,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-gray-400 text-sm">
               <span>Mājslapas izstrādātājs:</span>
               <Link href={"/team"}>
-                <span className="text-red-500 hover:text-red-400 transition-colors duration-200">
+                <span className="text-rose-500 hover:text-rose-300 transition-colors duration-200">
                   Kaspars Breģis
                 </span>
               </Link>
